@@ -104,7 +104,8 @@ def getMotifWord(mot,keywords_num):
     for ele in Mword:
         dic_m[ele]=dic_m.setdefault(ele,0)+1
     dic=list(sorted(dic_m.items(), key=lambda x: x[1], reverse=True))
-    return dic[:keywords_num]
+    keywords = [ele[0] for ele in dic[:keywords_num]]
+    return keywords
 
 def get_abstract(M,article,source,len_A):
     dic={}
